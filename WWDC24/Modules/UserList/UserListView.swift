@@ -16,6 +16,7 @@ struct UserListView: View {
             List(viewModel.users, id: \.id) { user in
                 Text(user.fullName)
             }
+            .alert(with: $viewModel.alert)
             .navigationTitle("Users")
         }
         .task {

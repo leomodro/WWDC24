@@ -13,6 +13,7 @@ class UserListViewModel: ObservableObject {
     let service: UserServiceable
     
     @Published var users: [User] = []
+    @Published var alert: Alerts?
     
     init(service: UserServiceable) {
         self.service = service
@@ -23,6 +24,7 @@ class UserListViewModel: ObservableObject {
             users = try await service.fetchUsers().sorted(by: \.fullName)
         } catch {
             print(error)
+            alert = .unableToFetchData
         }
     }
     
