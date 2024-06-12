@@ -30,3 +30,9 @@ struct User: Codable, Sendable {
 enum Gender: String, Codable, Sendable {
     case male, female
 }
+
+extension User {
+    var fullName: String {
+        firstName + " " + lastName
+    }
+}

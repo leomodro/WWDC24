@@ -10,17 +10,17 @@ import SwiftUI
 @MainActor
 class UserListViewModel: ObservableObject {
     
-    let service: Service
+    let service: UserServiceable
     
     @Published var users: [User] = []
     
-    init(service: Service) {
+    init(service: UserServiceable) {
         self.service = service
     }
     
     func fetchUsers() async {
         do {
-            users = try await service.fetchUsers()
+            users = try await service.fetchUsers().sorted(by: \.fullName)
         } catch {
             print(error)
         }

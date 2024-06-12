@@ -14,7 +14,7 @@ struct UserListView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.users, id: \.id) { user in
-                Text(user.firstName)
+                Text(user.fullName)
             }
             .navigationTitle("Users")
         }

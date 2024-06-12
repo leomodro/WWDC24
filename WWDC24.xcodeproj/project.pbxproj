@@ -12,9 +12,12 @@
 		670A2E9F2C19F1A3004DD1A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 670A2E9E2C19F1A3004DD1A8 /* Assets.xcassets */; };
 		670A2EA22C19F1A3004DD1A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 670A2EA12C19F1A3004DD1A8 /* Preview Assets.xcassets */; };
 		670A2EAC2C19F1A4004DD1A8 /* WWDC24Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EAB2C19F1A4004DD1A8 /* WWDC24Tests.swift */; };
-		670A2EC52C19F1E1004DD1A8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EC42C19F1DD004DD1A8 /* Service.swift */; };
+		670A2EC52C19F1E1004DD1A8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EC42C19F1DD004DD1A8 /* APIClient.swift */; };
 		670A2EC72C19F1F4004DD1A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EC62C19F1F2004DD1A8 /* User.swift */; };
 		670A2EC92C19F226004DD1A8 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EC82C19F222004DD1A8 /* UserListViewModel.swift */; };
+		670A2ECD2C1A07B7004DD1A8 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2ECC2C1A07AB004DD1A8 /* Sequence+Extension.swift */; };
+		670A2ECF2C1A08DA004DD1A8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2ECE2C1A08D5004DD1A8 /* UserService.swift */; };
+		670A2ED82C1A0AD7004DD1A8 /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2ED72C1A0AD7004DD1A8 /* UserListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +38,14 @@
 		670A2EA12C19F1A3004DD1A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		670A2EA72C19F1A4004DD1A8 /* WWDC24Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WWDC24Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		670A2EAB2C19F1A4004DD1A8 /* WWDC24Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDC24Tests.swift; sourceTree = "<group>"; };
-		670A2EC42C19F1DD004DD1A8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		670A2EC42C19F1DD004DD1A8 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		670A2EC62C19F1F2004DD1A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		670A2EC82C19F222004DD1A8 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		670A2ECA2C19F269004DD1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		670A2ECB2C19F2CD004DD1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		670A2ECC2C1A07AB004DD1A8 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		670A2ECE2C1A08D5004DD1A8 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		670A2ED72C1A0AD7004DD1A8 /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +89,10 @@
 			children = (
 				670A2ECB2C19F2CD004DD1A8 /* Info.plist */,
 				670A2E9A2C19F1A3004DD1A8 /* WWDC24App.swift */,
-				670A2EC42C19F1DD004DD1A8 /* Service.swift */,
-				670A2EC62C19F1F2004DD1A8 /* User.swift */,
-				670A2E9C2C19F1A3004DD1A8 /* UserListView.swift */,
-				670A2EC82C19F222004DD1A8 /* UserListViewModel.swift */,
+				670A2ED02C1A0952004DD1A8 /* Extensions */,
+				670A2ED12C1A095C004DD1A8 /* Services */,
+				670A2ED22C1A0976004DD1A8 /* Models */,
+				670A2ED32C1A0A8C004DD1A8 /* Modules */,
 				670A2E9E2C19F1A3004DD1A8 /* Assets.xcassets */,
 				670A2EA02C19F1A3004DD1A8 /* Preview Content */,
 			);
@@ -106,8 +112,67 @@
 			children = (
 				670A2ECA2C19F269004DD1A8 /* Info.plist */,
 				670A2EAB2C19F1A4004DD1A8 /* WWDC24Tests.swift */,
+				670A2ED52C1A0AAF004DD1A8 /* Modules */,
 			);
 			path = WWDC24Tests;
+			sourceTree = "<group>";
+		};
+		670A2ED02C1A0952004DD1A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				670A2ECC2C1A07AB004DD1A8 /* Sequence+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		670A2ED12C1A095C004DD1A8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				670A2EC42C19F1DD004DD1A8 /* APIClient.swift */,
+				670A2ECE2C1A08D5004DD1A8 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		670A2ED22C1A0976004DD1A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				670A2EC62C19F1F2004DD1A8 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		670A2ED32C1A0A8C004DD1A8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				670A2ED42C1A0A94004DD1A8 /* UserList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		670A2ED42C1A0A94004DD1A8 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				670A2E9C2C19F1A3004DD1A8 /* UserListView.swift */,
+				670A2EC82C19F222004DD1A8 /* UserListViewModel.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		670A2ED52C1A0AAF004DD1A8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				670A2ED62C1A0AB6004DD1A8 /* UserList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		670A2ED62C1A0AB6004DD1A8 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				670A2ED72C1A0AD7004DD1A8 /* UserListViewModelTests.swift */,
+			);
+			path = UserList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,10 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				670A2ECF2C1A08DA004DD1A8 /* UserService.swift in Sources */,
 				670A2EC72C19F1F4004DD1A8 /* User.swift in Sources */,
 				670A2E9D2C19F1A3004DD1A8 /* UserListView.swift in Sources */,
 				670A2E9B2C19F1A3004DD1A8 /* WWDC24App.swift in Sources */,
-				670A2EC52C19F1E1004DD1A8 /* Service.swift in Sources */,
+				670A2EC52C19F1E1004DD1A8 /* APIClient.swift in Sources */,
+				670A2ECD2C1A07B7004DD1A8 /* Sequence+Extension.swift in Sources */,
 				670A2EC92C19F226004DD1A8 /* UserListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				670A2EAC2C19F1A4004DD1A8 /* WWDC24Tests.swift in Sources */,
+				670A2ED82C1A0AD7004DD1A8 /* UserListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
