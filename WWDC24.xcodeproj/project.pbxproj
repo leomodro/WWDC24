@@ -22,6 +22,8 @@
 		670A2EDD2C1A196D004DD1A8 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EDC2C1A1968004DD1A8 /* View+Extension.swift */; };
 		670A2EE02C1A1ABB004DD1A8 /* UserFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EDF2C1A1AB4004DD1A8 /* UserFixture.swift */; };
 		670A2EE32C1A1BCA004DD1A8 /* UserServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EE22C1A1BC6004DD1A8 /* UserServiceSpy.swift */; };
+		670A2EE52C1A39B8004DD1A8 /* PreviewTrait+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EE42C1A39A6004DD1A8 /* PreviewTrait+Extension.swift */; };
+		670A2EE72C1A39E0004DD1A8 /* UserListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EE62C1A39D7004DD1A8 /* UserListPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		670A2EDC2C1A1968004DD1A8 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		670A2EDF2C1A1AB4004DD1A8 /* UserFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFixture.swift; sourceTree = "<group>"; };
 		670A2EE22C1A1BC6004DD1A8 /* UserServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceSpy.swift; sourceTree = "<group>"; };
+		670A2EE42C1A39A6004DD1A8 /* PreviewTrait+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewTrait+Extension.swift"; sourceTree = "<group>"; };
+		670A2EE62C1A39D7004DD1A8 /* UserListPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 			children = (
 				670A2ECC2C1A07AB004DD1A8 /* Sequence+Extension.swift */,
 				670A2EDC2C1A1968004DD1A8 /* View+Extension.swift */,
+				670A2EE42C1A39A6004DD1A8 /* PreviewTrait+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				670A2EDA2C1A18FF004DD1A8 /* Alerts.swift */,
+				670A2EE62C1A39D7004DD1A8 /* UserListPreview.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -314,10 +320,12 @@
 				670A2ECF2C1A08DA004DD1A8 /* UserService.swift in Sources */,
 				670A2EC72C19F1F4004DD1A8 /* User.swift in Sources */,
 				670A2EDB2C1A1903004DD1A8 /* Alerts.swift in Sources */,
+				670A2EE72C1A39E0004DD1A8 /* UserListPreview.swift in Sources */,
 				670A2E9D2C19F1A3004DD1A8 /* UserListView.swift in Sources */,
 				670A2E9B2C19F1A3004DD1A8 /* WWDC24App.swift in Sources */,
 				670A2EC52C19F1E1004DD1A8 /* APIClient.swift in Sources */,
 				670A2ECD2C1A07B7004DD1A8 /* Sequence+Extension.swift in Sources */,
+				670A2EE52C1A39B8004DD1A8 /* PreviewTrait+Extension.swift in Sources */,
 				670A2EDD2C1A196D004DD1A8 /* View+Extension.swift in Sources */,
 				670A2EC92C19F226004DD1A8 /* UserListViewModel.swift in Sources */,
 			);

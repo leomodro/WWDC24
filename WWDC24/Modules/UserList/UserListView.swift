@@ -9,9 +9,10 @@ import SwiftUI
 
 struct UserListView: View {
     
-    @ObservedObject var viewModel: UserListViewModel
+    @Environment(UserListViewModel.self) private var viewModel: UserListViewModel
     
     var body: some View {
+        @Bindable var viewModel = viewModel
         NavigationStack {
             List(viewModel.users, id: \.id) { user in
                 Text(user.fullName)
@@ -25,6 +26,6 @@ struct UserListView: View {
     }
 }
 
-#Preview {
-    UserListView(viewModel: UserListViewModel(service: UserService()))
+#Preview(traits: .userListPreview) {
+    UserListView()
 }

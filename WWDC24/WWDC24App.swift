@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct WWDC24App: App {
+    @State private var viewModel = UserListViewModel(service: UserService())
+    
     var body: some Scene {
         WindowGroup {
-            UserListView(viewModel: UserListViewModel(service: UserService()))
+            UserListView()
+                .environment(viewModel)
         }
     }
 }

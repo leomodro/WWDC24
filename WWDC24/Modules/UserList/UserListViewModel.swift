@@ -5,15 +5,16 @@
 //  Created by Leonardo Modro on 12/06/24.
 //
 
+import Observation
 import SwiftUI
 
 @MainActor
-class UserListViewModel: ObservableObject {
+@Observable class UserListViewModel {
     
     let service: UserServiceable
     
-    @Published var users: [User] = []
-    @Published var alert: Alerts?
+    var users: [User] = []
+    var alert: Alerts?
     
     init(service: UserServiceable) {
         self.service = service
@@ -23,7 +24,6 @@ class UserListViewModel: ObservableObject {
         do {
             users = try await service.fetchUsers().sorted(by: \.fullName)
         } catch {
-            print(error)
             alert = .unableToFetchData
         }
     }
