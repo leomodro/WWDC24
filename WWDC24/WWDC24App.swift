@@ -11,7 +11,7 @@ import SwiftUI
 struct WWDC24App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UserListView(viewModel: UserListViewModel(service: UserService()))
         }
     }
 }

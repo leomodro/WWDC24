@@ -8,23 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		670A2E9B2C19F1A3004DD1A8 /* WWDC24App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2E9A2C19F1A3004DD1A8 /* WWDC24App.swift */; };
-		670A2E9D2C19F1A3004DD1A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2E9C2C19F1A3004DD1A8 /* ContentView.swift */; };
+		670A2E9D2C19F1A3004DD1A8 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2E9C2C19F1A3004DD1A8 /* UserListView.swift */; };
 		670A2E9F2C19F1A3004DD1A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 670A2E9E2C19F1A3004DD1A8 /* Assets.xcassets */; };
 		670A2EA22C19F1A3004DD1A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 670A2EA12C19F1A3004DD1A8 /* Preview Assets.xcassets */; };
 		670A2EAC2C19F1A4004DD1A8 /* WWDC24Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EAB2C19F1A4004DD1A8 /* WWDC24Tests.swift */; };
-		670A2EB62C19F1A4004DD1A8 /* WWDC24UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EB52C19F1A4004DD1A8 /* WWDC24UITests.swift */; };
-		670A2EB82C19F1A4004DD1A8 /* WWDC24UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EB72C19F1A4004DD1A8 /* WWDC24UITestsLaunchTests.swift */; };
+		670A2EC52C19F1E1004DD1A8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EC42C19F1DD004DD1A8 /* Service.swift */; };
+		670A2EC72C19F1F4004DD1A8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EC62C19F1F2004DD1A8 /* User.swift */; };
+		670A2EC92C19F226004DD1A8 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EC82C19F222004DD1A8 /* UserListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		670A2EA82C19F1A4004DD1A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 670A2E8F2C19F1A3004DD1A8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 670A2E962C19F1A3004DD1A8;
-			remoteInfo = WWDC24;
-		};
-		670A2EB22C19F1A4004DD1A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 670A2E8F2C19F1A3004DD1A8 /* Project object */;
 			proxyType = 1;
@@ -36,14 +30,16 @@
 /* Begin PBXFileReference section */
 		670A2E972C19F1A3004DD1A8 /* WWDC24.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WWDC24.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		670A2E9A2C19F1A3004DD1A8 /* WWDC24App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDC24App.swift; sourceTree = "<group>"; };
-		670A2E9C2C19F1A3004DD1A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		670A2E9C2C19F1A3004DD1A8 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		670A2E9E2C19F1A3004DD1A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		670A2EA12C19F1A3004DD1A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		670A2EA72C19F1A4004DD1A8 /* WWDC24Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WWDC24Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		670A2EAB2C19F1A4004DD1A8 /* WWDC24Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDC24Tests.swift; sourceTree = "<group>"; };
-		670A2EB12C19F1A4004DD1A8 /* WWDC24UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WWDC24UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		670A2EB52C19F1A4004DD1A8 /* WWDC24UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDC24UITests.swift; sourceTree = "<group>"; };
-		670A2EB72C19F1A4004DD1A8 /* WWDC24UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDC24UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		670A2EC42C19F1DD004DD1A8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		670A2EC62C19F1F2004DD1A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		670A2EC82C19F222004DD1A8 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		670A2ECA2C19F269004DD1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		670A2ECB2C19F2CD004DD1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +57,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		670A2EAE2C19F1A4004DD1A8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,7 +65,6 @@
 			children = (
 				670A2E992C19F1A3004DD1A8 /* WWDC24 */,
 				670A2EAA2C19F1A4004DD1A8 /* WWDC24Tests */,
-				670A2EB42C19F1A4004DD1A8 /* WWDC24UITests */,
 				670A2E982C19F1A3004DD1A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +74,6 @@
 			children = (
 				670A2E972C19F1A3004DD1A8 /* WWDC24.app */,
 				670A2EA72C19F1A4004DD1A8 /* WWDC24Tests.xctest */,
-				670A2EB12C19F1A4004DD1A8 /* WWDC24UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,8 +81,12 @@
 		670A2E992C19F1A3004DD1A8 /* WWDC24 */ = {
 			isa = PBXGroup;
 			children = (
+				670A2ECB2C19F2CD004DD1A8 /* Info.plist */,
 				670A2E9A2C19F1A3004DD1A8 /* WWDC24App.swift */,
-				670A2E9C2C19F1A3004DD1A8 /* ContentView.swift */,
+				670A2EC42C19F1DD004DD1A8 /* Service.swift */,
+				670A2EC62C19F1F2004DD1A8 /* User.swift */,
+				670A2E9C2C19F1A3004DD1A8 /* UserListView.swift */,
+				670A2EC82C19F222004DD1A8 /* UserListViewModel.swift */,
 				670A2E9E2C19F1A3004DD1A8 /* Assets.xcassets */,
 				670A2EA02C19F1A3004DD1A8 /* Preview Content */,
 			);
@@ -113,18 +104,10 @@
 		670A2EAA2C19F1A4004DD1A8 /* WWDC24Tests */ = {
 			isa = PBXGroup;
 			children = (
+				670A2ECA2C19F269004DD1A8 /* Info.plist */,
 				670A2EAB2C19F1A4004DD1A8 /* WWDC24Tests.swift */,
 			);
 			path = WWDC24Tests;
-			sourceTree = "<group>";
-		};
-		670A2EB42C19F1A4004DD1A8 /* WWDC24UITests */ = {
-			isa = PBXGroup;
-			children = (
-				670A2EB52C19F1A4004DD1A8 /* WWDC24UITests.swift */,
-				670A2EB72C19F1A4004DD1A8 /* WWDC24UITestsLaunchTests.swift */,
-			);
-			path = WWDC24UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,24 +148,6 @@
 			productReference = 670A2EA72C19F1A4004DD1A8 /* WWDC24Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		670A2EB02C19F1A4004DD1A8 /* WWDC24UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 670A2EC12C19F1A4004DD1A8 /* Build configuration list for PBXNativeTarget "WWDC24UITests" */;
-			buildPhases = (
-				670A2EAD2C19F1A4004DD1A8 /* Sources */,
-				670A2EAE2C19F1A4004DD1A8 /* Frameworks */,
-				670A2EAF2C19F1A4004DD1A8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				670A2EB32C19F1A4004DD1A8 /* PBXTargetDependency */,
-			);
-			name = WWDC24UITests;
-			productName = WWDC24UITests;
-			productReference = 670A2EB12C19F1A4004DD1A8 /* WWDC24UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +162,6 @@
 						CreatedOnToolsVersion = 16.0;
 					};
 					670A2EA62C19F1A4004DD1A8 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 670A2E962C19F1A3004DD1A8;
-					};
-					670A2EB02C19F1A4004DD1A8 = {
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 670A2E962C19F1A3004DD1A8;
 					};
@@ -221,7 +182,6 @@
 			targets = (
 				670A2E962C19F1A3004DD1A8 /* WWDC24 */,
 				670A2EA62C19F1A4004DD1A8 /* WWDC24Tests */,
-				670A2EB02C19F1A4004DD1A8 /* WWDC24UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,13 +203,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		670A2EAF2C19F1A4004DD1A8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -257,8 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				670A2E9D2C19F1A3004DD1A8 /* ContentView.swift in Sources */,
+				670A2EC72C19F1F4004DD1A8 /* User.swift in Sources */,
+				670A2E9D2C19F1A3004DD1A8 /* UserListView.swift in Sources */,
 				670A2E9B2C19F1A3004DD1A8 /* WWDC24App.swift in Sources */,
+				670A2EC52C19F1E1004DD1A8 /* Service.swift in Sources */,
+				670A2EC92C19F226004DD1A8 /* UserListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,15 +226,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		670A2EAD2C19F1A4004DD1A8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				670A2EB62C19F1A4004DD1A8 /* WWDC24UITests.swift in Sources */,
-				670A2EB82C19F1A4004DD1A8 /* WWDC24UITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,11 +233,6 @@
 			isa = PBXTargetDependency;
 			target = 670A2E962C19F1A3004DD1A8 /* WWDC24 */;
 			targetProxy = 670A2EA82C19F1A4004DD1A8 /* PBXContainerItemProxy */;
-		};
-		670A2EB32C19F1A4004DD1A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 670A2E962C19F1A3004DD1A8 /* WWDC24 */;
-			targetProxy = 670A2EB22C19F1A4004DD1A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -425,6 +367,7 @@
 				DEVELOPMENT_TEAM = TV797S35W5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WWDC24/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +397,7 @@
 				DEVELOPMENT_TEAM = TV797S35W5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WWDC24/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -480,6 +424,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TV797S35W5;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WWDC24Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leomodro.WWDC24Tests;
@@ -499,6 +444,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TV797S35W5;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WWDC24Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leomodro.WWDC24Tests;
@@ -507,40 +453,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WWDC24.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WWDC24";
-			};
-			name = Release;
-		};
-		670A2EC22C19F1A4004DD1A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TV797S35W5;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leomodro.WWDC24UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WWDC24;
-			};
-			name = Debug;
-		};
-		670A2EC32C19F1A4004DD1A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TV797S35W5;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leomodro.WWDC24UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WWDC24;
 			};
 			name = Release;
 		};
@@ -570,15 +482,6 @@
 			buildConfigurations = (
 				670A2EBF2C19F1A4004DD1A8 /* Debug */,
 				670A2EC02C19F1A4004DD1A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		670A2EC12C19F1A4004DD1A8 /* Build configuration list for PBXNativeTarget "WWDC24UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				670A2EC22C19F1A4004DD1A8 /* Debug */,
-				670A2EC32C19F1A4004DD1A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
