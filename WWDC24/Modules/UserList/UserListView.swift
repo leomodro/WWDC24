@@ -16,16 +16,28 @@ struct UserListView: View {
     var body: some View {
         @Bindable var viewModel = viewModel
         NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 8) {
-                    ForEach(viewModel.users, id: \.id) { user in
-                        card(for: user)
+            switch viewModel.state {
+            case .loading:
+                Image(systemName: "swift")
+                    .symbolEffect(.pulse, isActive: true)
+                    .font(.system(size: 72))
+                    .foregroundStyle(.red)
+            case .empty:
+                ContentUnavailableView("No users found",
+                                       systemImage: "person.crop.circle.badge.questionmark",
+                                       description: Text("We couldn't find any users at this time. Try again later"))
+            case .loaded:
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 8) {
+                        ForEach(viewModel.users, id: \.id) { user in
+                            card(for: user)
+                        }
                     }
+                    .padding(16)
                 }
-                .padding(16)
+                .alert(with: $viewModel.alert)
+                .navigationTitle("Users")
             }
-            .alert(with: $viewModel.alert)
-            .navigationTitle("Users")
         }
         .task {
             await viewModel.fetchUsers()

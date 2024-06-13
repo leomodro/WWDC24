@@ -8,12 +8,17 @@
 import Observation
 import SwiftUI
 
+enum ViewState {
+    case loading, empty, loaded
+}
+
 @MainActor
 @Observable class UserListViewModel {
     
     let service: UserServiceable
     
     var users: [User] = []
+    var state: ViewState = .loading
     var alert: Alerts?
     
     init(service: UserServiceable) {
@@ -23,7 +28,13 @@ import SwiftUI
     func fetchUsers() async {
         do {
             users = try await service.fetchUsers().sorted(by: \.fullName)
+            withAnimation {
+                state = users.isEmpty ? .empty : .loaded
+            }
         } catch {
+            withAnimation {
+                state = .empty
+            }
             alert = .unableToFetchData
         }
     }
