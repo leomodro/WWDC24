@@ -13,19 +13,25 @@ enum Alerts: Identifiable {
     case unableToFetchData
 }
 
+extension String {
+    var localized: String {
+        NSLocalizedString(self, comment: "")
+    }
+}
+
 // MARK: - Properties
 extension Alerts {
     var title: String {
         switch self {
         case .unableToFetchData:
-            return "Something went wrong"
+            return "Something went wrong".localized
         }
     }
     
     var message: String {
         switch self {
         case .unableToFetchData:
-            return "We were unable to fetch data at this time. Try again later"
+            return "We were unable to fetch data at this time. Try again later".localized
         }
     }
     

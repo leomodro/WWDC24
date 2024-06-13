@@ -25,6 +25,7 @@
 		670A2EE52C1A39B8004DD1A8 /* PreviewTrait+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EE42C1A39A6004DD1A8 /* PreviewTrait+Extension.swift */; };
 		670A2EE72C1A39E0004DD1A8 /* UserListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EE62C1A39D7004DD1A8 /* UserListPreview.swift */; };
 		67FE243A2C1B88B700571053 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FE24392C1B88B300571053 /* Tag+Extension.swift */; };
+		67FE243C2C1B8A5300571053 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 67FE243B2C1B8A5300571053 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		670A2EE42C1A39A6004DD1A8 /* PreviewTrait+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewTrait+Extension.swift"; sourceTree = "<group>"; };
 		670A2EE62C1A39D7004DD1A8 /* UserListPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPreview.swift; sourceTree = "<group>"; };
 		67FE24392C1B88B300571053 /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
+		67FE243B2C1B8A5300571053 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				670A2ECB2C19F2CD004DD1A8 /* Info.plist */,
 				670A2E9A2C19F1A3004DD1A8 /* WWDC24App.swift */,
+				67FE243B2C1B8A5300571053 /* Localizable.xcstrings */,
 				670A2ED02C1A0952004DD1A8 /* Extensions */,
 				670A2ED12C1A095C004DD1A8 /* Services */,
 				670A2ED22C1A0976004DD1A8 /* Models */,
@@ -292,6 +295,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 670A2E8E2C19F1A3004DD1A8;
 			productRefGroup = 670A2E982C19F1A3004DD1A8 /* Products */;
@@ -311,6 +315,7 @@
 			files = (
 				670A2EA22C19F1A3004DD1A8 /* Preview Assets.xcassets in Resources */,
 				670A2E9F2C19F1A3004DD1A8 /* Assets.xcassets in Resources */,
+				67FE243C2C1B8A5300571053 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +429,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -480,6 +486,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
