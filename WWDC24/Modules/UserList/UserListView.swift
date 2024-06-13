@@ -18,14 +18,9 @@ struct UserListView: View {
         NavigationStack {
             switch viewModel.state {
             case .loading:
-                Image(systemName: "swift")
-                    .symbolEffect(.pulse, isActive: true)
-                    .font(.system(size: 72))
-                    .foregroundStyle(.red)
+                loadingView
             case .empty:
-                ContentUnavailableView("No users found",
-                                       systemImage: "person.crop.circle.badge.questionmark",
-                                       description: Text("We couldn't find any users at this time. Try again later"))
+                emptyView
             case .loaded:
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 8) {
@@ -47,6 +42,19 @@ struct UserListView: View {
 
 // MARK: - View components
 extension UserListView {
+    var loadingView: some View {
+        Image(systemName: "swift")
+            .symbolEffect(.pulse, isActive: true)
+            .font(.system(size: 72))
+            .foregroundStyle(.red)
+    }
+    
+    var emptyView: some View {
+        ContentUnavailableView("No users found",
+                               systemImage: "person.crop.circle.badge.questionmark",
+                               description: Text("We couldn't find any users at this time. Try again later"))
+    }
+    
     @ViewBuilder
     func card(for user: User) -> some View {
         VStack(alignment: .leading, spacing: 4) {
