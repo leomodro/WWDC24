@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct UserResponse: Codable, Sendable {
     let users: [User]
@@ -24,6 +25,17 @@ struct User: Codable, Sendable {
     
     enum Role: String, Codable, Sendable {
         case admin, moderator, user
+        
+        var color: Color {
+            switch self {
+            case .admin:
+                    .orange
+            case .moderator:
+                    .indigo
+            case .user:
+                    .red
+            }
+        }
     }
 }
 
@@ -34,5 +46,14 @@ enum Gender: String, Codable, Sendable {
 extension User {
     var fullName: String {
         firstName + " " + lastName
+    }
+    
+    var initials: String {
+        let formatter = PersonNameComponentsFormatter()
+        if let components = formatter.personNameComponents(from: fullName) {
+             formatter.style = .abbreviated
+             return formatter.string(from: components)
+        }
+        return "-"
     }
 }
