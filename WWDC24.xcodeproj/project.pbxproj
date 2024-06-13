@@ -24,6 +24,7 @@
 		670A2EE32C1A1BCA004DD1A8 /* UserServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EE22C1A1BC6004DD1A8 /* UserServiceSpy.swift */; };
 		670A2EE52C1A39B8004DD1A8 /* PreviewTrait+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EE42C1A39A6004DD1A8 /* PreviewTrait+Extension.swift */; };
 		670A2EE72C1A39E0004DD1A8 /* UserListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670A2EE62C1A39D7004DD1A8 /* UserListPreview.swift */; };
+		67FE243A2C1B88B700571053 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FE24392C1B88B300571053 /* Tag+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		670A2EE22C1A1BC6004DD1A8 /* UserServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceSpy.swift; sourceTree = "<group>"; };
 		670A2EE42C1A39A6004DD1A8 /* PreviewTrait+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewTrait+Extension.swift"; sourceTree = "<group>"; };
 		670A2EE62C1A39D7004DD1A8 /* UserListPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPreview.swift; sourceTree = "<group>"; };
+		67FE24392C1B88B300571053 /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				670A2ECA2C19F269004DD1A8 /* Info.plist */,
 				670A2EAB2C19F1A4004DD1A8 /* WWDC24Tests.swift */,
+				67FE24382C1B88AC00571053 /* Extension */,
 				670A2ED52C1A0AAF004DD1A8 /* Modules */,
 			);
 			path = WWDC24Tests;
@@ -215,6 +218,14 @@
 				670A2EE22C1A1BC6004DD1A8 /* UserServiceSpy.swift */,
 			);
 			path = Doubles;
+			sourceTree = "<group>";
+		};
+		67FE24382C1B88AC00571053 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				67FE24392C1B88B300571053 /* Tag+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				670A2EAC2C19F1A4004DD1A8 /* WWDC24Tests.swift in Sources */,
+				67FE243A2C1B88B700571053 /* Tag+Extension.swift in Sources */,
 				670A2ED82C1A0AD7004DD1A8 /* UserListViewModelTests.swift in Sources */,
 				670A2EE02C1A1ABB004DD1A8 /* UserFixture.swift in Sources */,
 				670A2EE32C1A1BCA004DD1A8 /* UserServiceSpy.swift in Sources */,

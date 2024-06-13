@@ -8,9 +8,11 @@
 import Testing
 @testable import WWDC24
 
-struct UserListViewModelTests {
+@Suite("User List") struct UserListViewModelTests {
 
-    @Test func usersFetched() async throws {
+    @Test("Fetched users",
+          .tags(.requests))
+    func usersFetched() async throws {
         let (serviceSpy, sut) = await makeSUT()
         
         serviceSpy.fetchUsersDataReturned = [User.fixture()]
@@ -22,13 +24,13 @@ struct UserListViewModelTests {
         #expect(userCount == 1)
     }
     
-    @Test("Users sorted by full name", arguments: [[
+    @Test("Users sorted by full name", .tags(.sorting), arguments: [[
         User.fixture(),
         User.fixture(id: 2, firstName: "Jane", lastName: "Doe", age: 20, gender: .female),
         User.fixture(id: 3, firstName: "Albert", lastName: "Doe", age: 30, role: .admin),
         User.fixture(id: 4, firstName: "Steve", lastName: "Jobs", age: 40, role: .moderator)
     ]])
-    func usersFetched(_ users: [User]) async throws {
+    func usersSortedByFullName(_ users: [User]) async throws {
         let (serviceSpy, sut) = await makeSUT()
         
         serviceSpy.fetchUsersDataReturned = users
@@ -42,7 +44,9 @@ struct UserListViewModelTests {
         #expect(firstUser.fullName == "Albert Doe")
     }
     
-    @Test func fetchUserThrowingError() async throws {
+    @Test("Error fetching users",
+        .tags(.requests))
+    func fetchUserThrowingError() async throws {
         let (serviceSpy, sut) = await makeSUT()
         
         serviceSpy.fetchUsersThrowError = .unknown
@@ -53,10 +57,18 @@ struct UserListViewModelTests {
         #expect(alert == .unableToFetchData)
     }
     
-    private func makeSUT() async -> (serviceSpy: UserServiceSpy, sut: UserListViewModel) {
+    @Test("Users reverse sorted by full name", .disabled("Order shouldn't be reversed"))
+    func usersSortedReverse() async throws {
+        // You can disable a test
+    }
+
+}
+
+// MARK: - SUT
+extension UserListViewModelTests {
+    func makeSUT() async -> (serviceSpy: UserServiceSpy, sut: UserListViewModel) {
         let serviceSpy = await UserServiceSpy()
         let sut = await UserListViewModel(service: serviceSpy)
         return (serviceSpy, sut)
     }
-
 }
