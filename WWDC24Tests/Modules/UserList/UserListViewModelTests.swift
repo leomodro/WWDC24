@@ -64,6 +64,7 @@ import Testing
         #expect(serviceSpy.fetchUsersCallCount == 1)
         #expect(fetchUsers.count == 4)
         #expect(firstUser.fullName == "Albert Doe")
+        #expect(firstUser.initials == "AD")
     }
     
     @Test("Users reverse sorted by full name", .disabled("Order shouldn't be reversed"))
