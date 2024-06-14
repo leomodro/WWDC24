@@ -10,8 +10,7 @@ import Testing
 
 @Suite("User List") struct UserListViewModelTests {
 
-    @Test("Fetched users",
-          .tags(.requests))
+    @Test("Fetched users", .tags(.requests))
     func usersFetched() async throws {
         let (serviceSpy, sut) = await makeSUT()
         
@@ -22,6 +21,29 @@ import Testing
         #expect(serviceSpy.fetchUsersDataCalled)
         #expect(serviceSpy.fetchUsersCallCount == 1)
         #expect(userCount == 1)
+    }
+    
+    @Test("Error fetching users", .tags(.requests))
+    func fetchUserThrowingError() async throws {
+        let (serviceSpy, sut) = await makeSUT()
+        
+        serviceSpy.fetchUsersThrowError = .unknown
+        await sut.fetchUsers()
+        
+        let alert = try #require(await sut.alert)
+        
+        #expect(alert == .unableToFetchData)
+    }
+    
+    @Test("Empty users", .tags(.requests))
+    func fetchUserEmptyReturn() async throws {
+        let (_, sut) = await makeSUT()
+        
+        await sut.fetchUsers()
+        
+        let alert = try #require(await sut.state)
+        
+        #expect(alert == .empty)
     }
     
     @Test("Users sorted by full name", .tags(.sorting), arguments: [[
@@ -42,19 +64,6 @@ import Testing
         #expect(serviceSpy.fetchUsersCallCount == 1)
         #expect(fetchUsers.count == 4)
         #expect(firstUser.fullName == "Albert Doe")
-    }
-    
-    @Test("Error fetching users",
-        .tags(.requests))
-    func fetchUserThrowingError() async throws {
-        let (serviceSpy, sut) = await makeSUT()
-        
-        serviceSpy.fetchUsersThrowError = .unknown
-        await sut.fetchUsers()
-        
-        let alert = try #require(await sut.alert)
-        
-        #expect(alert == .unableToFetchData)
     }
     
     @Test("Users reverse sorted by full name", .disabled("Order shouldn't be reversed"))

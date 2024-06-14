@@ -15,7 +15,7 @@ struct UserResponse: Codable, Sendable {
     let limit: Int
 }
 
-struct User: Codable, Sendable {
+struct User: Codable, Sendable, Hashable {
     let id: Int
     let firstName: String
     let lastName: String

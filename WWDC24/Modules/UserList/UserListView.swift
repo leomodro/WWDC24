@@ -10,6 +10,7 @@ import SwiftUI
 struct UserListView: View {
     
     @Environment(UserListViewModel.self) private var viewModel: UserListViewModel
+    @Namespace var userDetail
     
     private var columns = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -25,7 +26,7 @@ struct UserListView: View {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 8) {
                         ForEach(viewModel.users, id: \.id) { user in
-                            card(for: user)
+                            row(for: user)
                         }
                     }
                     .padding(16)
@@ -53,6 +54,19 @@ extension UserListView {
         ContentUnavailableView("No users found",
                                systemImage: "person.crop.circle.badge.questionmark",
                                description: Text("We couldn't find any users at this time. Try again later"))
+    }
+    
+    @ViewBuilder 
+    func row(for user: User) -> some View {
+        NavigationLink {
+            Text(user.fullName)
+                .font(.largeTitle)
+                .navigationTransition(.zoom(sourceID: user.id, in: userDetail))
+        } label: {
+            card(for: user)
+        }
+        .matchedTransitionSource(id: user.id, in: userDetail)
+        .buttonStyle(.plain)
     }
     
     @ViewBuilder
