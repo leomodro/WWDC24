@@ -13,12 +13,6 @@ enum Alerts: Identifiable {
     case unableToFetchData
 }
 
-extension String {
-    var localized: String {
-        NSLocalizedString(self, comment: "")
-    }
-}
-
 // MARK: - Properties
 extension Alerts {
     var title: String {
