@@ -12,11 +12,11 @@ import Testing
 
     @Test("Fetched users", .tags(.requests))
     func usersFetched() async throws {
-        let (serviceSpy, sut) = await makeSUT()
+        let (serviceSpy, sut) = makeSUT()
         
         serviceSpy.fetchUsersDataReturned = [User.fixture()]
         await sut.fetchUsers()
-        let userCount = try #require(await sut.users.count)
+        let userCount = sut.users.count
         
         #expect(serviceSpy.fetchUsersDataCalled)
         #expect(serviceSpy.fetchUsersCallCount == 1)
@@ -25,44 +25,43 @@ import Testing
     
     @Test("Error fetching users", .tags(.requests))
     func fetchUserThrowingError() async throws {
-        let (serviceSpy, sut) = await makeSUT()
+        let (serviceSpy, sut) = makeSUT()
         
         serviceSpy.fetchUsersThrowError = .unknown
         await sut.fetchUsers()
         
-        let alert = try #require(await sut.alert)
+        let alert = try #require(sut.alert)
         
         #expect(alert == .unableToFetchData)
     }
     
     @Test("Empty users", .tags(.requests))
     func fetchUserEmptyReturn() async throws {
-        let (_, sut) = await makeSUT()
+        let (_, sut) = makeSUT()
         
         await sut.fetchUsers()
         
-        let alert = try #require(await sut.state)
+        let alert = sut.state
         
         #expect(alert == .empty)
     }
     
     @Test("Users sorted by full name", .tags(.sorting), arguments: [[
-        User.fixture(),
-        User.fixture(id: 2, firstName: "Jane", lastName: "Doe", age: 20, gender: .female),
-        User.fixture(id: 3, firstName: "Albert", lastName: "Doe", age: 30, role: .admin),
-        User.fixture(id: 4, firstName: "Steve", lastName: "Jobs", age: 40, role: .moderator)
+        await User.fixture(),
+        await User.fixture(id: 2, firstName: "Jane", lastName: "Doe", age: 20, gender: .female),
+        await User.fixture(id: 3, firstName: "Albert", lastName: "Doe", age: 30, role: .admin),
+        await User.fixture(id: 4, firstName: "Steve", lastName: "Jobs", age: 40, role: .moderator)
     ]])
     func usersSortedByFullName(_ users: [User]) async throws {
-        let (serviceSpy, sut) = await makeSUT()
+        let (serviceSpy, sut) = makeSUT()
         
         serviceSpy.fetchUsersDataReturned = users
         await sut.fetchUsers()
-        let fetchUsers = try #require(await sut.users)
-        let firstUser = try #require(fetchUsers.first)
+        let firstUser = try #require(sut.users.first)
         
         #expect(serviceSpy.fetchUsersDataCalled)
         #expect(serviceSpy.fetchUsersCallCount == 1)
-        #expect(fetchUsers.count == 4)
+        #expect(sut.users.count == 4)
         #expect(firstUser.fullName == "Albert Doe")
         #expect(firstUser.initials == "AD")
     }
@@ -76,9 +75,9 @@ import Testing
 
 // MARK: - SUT
 extension UserListViewModelTests {
-    func makeSUT() async -> (serviceSpy: UserServiceSpy, sut: UserListViewModel) {
-        let serviceSpy = await UserServiceSpy()
-        let sut = await UserListViewModel(service: serviceSpy)
+    func makeSUT() -> (serviceSpy: UserServiceSpy, sut: UserListViewModel) {
+        let serviceSpy = UserServiceSpy()
+        let sut = UserListViewModel(service: serviceSpy)
         return (serviceSpy, sut)
     }
 }

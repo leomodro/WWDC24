@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserListView: View {
     
+    @State var searchTerm: String = ""
     @Environment(UserListViewModel.self) private var viewModel: UserListViewModel
     @Namespace var userDetail
     
@@ -32,6 +33,7 @@ struct UserListView: View {
                     .padding(16)
                 }
                 .alert(with: $viewModel.alert)
+                .searchable(text: $searchTerm)
                 .navigationTitle("Users")
             }
         }
@@ -86,7 +88,7 @@ extension UserListView {
                 .font(.system(size: 14, weight: .light))
                 .padding(.bottom, 16)
             
-            Label("\(user.role)", systemImage: "tag")
+            Label(user.role.rawValue, systemImage: "tag")
                 .font(.caption)
                 .fontWeight(.medium)
                 .foregroundStyle(user.role.color)
@@ -103,4 +105,5 @@ extension UserListView {
 // MARK: - Preview
 #Preview(traits: .userListPreview) {
     UserListView()
+        .preferredColorScheme(.dark)
 }

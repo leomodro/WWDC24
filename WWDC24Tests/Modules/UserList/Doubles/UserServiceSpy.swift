@@ -9,10 +9,10 @@
 
 final class UserServiceSpy: UserServiceable {
     
-    nonisolated(unsafe) private(set) var fetchUsersDataCalled = false
-    nonisolated(unsafe) private(set) var fetchUsersCallCount = 0
-    nonisolated(unsafe) var fetchUsersDataReturned: [User] = []
-    nonisolated(unsafe) var fetchUsersThrowError: ServiceError?
+    private(set) var fetchUsersDataCalled = false
+    private(set) var fetchUsersCallCount = 0
+    var fetchUsersDataReturned: [User] = []
+    var fetchUsersThrowError: ServiceError?
     
     func fetchUsers() async throws -> [User] {
         if let fetchUsersThrowError { throw fetchUsersThrowError }

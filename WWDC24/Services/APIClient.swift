@@ -13,7 +13,6 @@ enum ServiceError: Error {
     case unknown
 }
 
-@MainActor
 protocol APIClient {
     func fetch<T: Codable>(_ path: String) async throws -> T
 }

@@ -12,7 +12,6 @@ enum ViewState {
     case loading, empty, loaded
 }
 
-@MainActor
 @Observable class UserListViewModel {
     
     let service: UserServiceable
