@@ -36,4 +36,20 @@ extension View {
             Text(item.message)
         }
     }
+    
+    func hardScrollEdgeEffect() -> some View {
+        if #available(iOS 26.0, *) {
+            return self.scrollEdgeEffectStyle(.hard, for: .all)
+        } else {
+            return self
+        }
+    }
+    
+    func minimizableTabView() -> some View {
+        if #available(iOS 26.0, *) {
+            return self.tabBarMinimizeBehavior(.automatic)
+        } else {
+            return self
+        }
+    }
 }

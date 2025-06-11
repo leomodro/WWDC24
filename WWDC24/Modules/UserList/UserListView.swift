@@ -33,7 +33,6 @@ struct UserListView: View {
                     .padding(16)
                 }
                 .alert(with: $viewModel.alert)
-                .searchable(text: $searchTerm)
                 .navigationTitle("Users")
             }
         }
