@@ -32,8 +32,9 @@ struct UserListView: View {
                     }
                     .padding(16)
                 }
+//                .hardScrollEdgeEffect() // Sets hard edge effect style on scrolled content
                 .alert(with: $viewModel.alert)
-                .navigationTitle("Users")
+                .navigationTitle(.users)
             }
         }
         .task {
@@ -52,9 +53,9 @@ extension UserListView {
     }
     
     var emptyView: some View {
-        ContentUnavailableView("No users found",
+        ContentUnavailableView(.noUsersFound,
                                systemImage: "person.crop.circle.badge.questionmark",
-                               description: Text("We couldn't find any users at this time. Try again later"))
+                               description: Text(.weCouldntFindAnyUsersAtThisTimeTryAgainLater))
     }
     
     @ViewBuilder 

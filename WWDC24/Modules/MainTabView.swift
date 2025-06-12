@@ -19,11 +19,11 @@ struct MainTabView: View {
             }
             
             Tab("WWDCs", systemImage: "applelogo", role: .none) {
-                Text("Other")
+                Text(.other)
             }
             
             Tab(role: .search) {
-                Text("Search")
+                Text(.search)
             }
         }
         .minimizableTabView()

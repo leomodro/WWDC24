@@ -32,7 +32,7 @@ extension Alerts {
     @ViewBuilder func alertButton() -> some View {
         switch self {
         case .unableToFetchData:
-            Button("Ok", action: { })
+            Button(.ok, action: { })
         }
     }
 }
