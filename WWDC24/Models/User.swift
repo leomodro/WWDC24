@@ -8,14 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct UserResponse: Codable, Sendable {
+struct UserResponse: @MainActor Codable, Sendable {
     let users: [User]
     let total: Int
     let skip: Int
     let limit: Int
 }
 
-struct User: Codable, Sendable, Hashable {
+struct User: @MainActor Codable, Sendable, Hashable {
     let id: Int
     let firstName: String
     let lastName: String
