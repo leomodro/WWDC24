@@ -19,7 +19,7 @@ struct MainTabView: View {
             }
             
             Tab("WWDCs", systemImage: "applelogo", role: .none) {
-                Text(.other)
+                WWDCsView()
             }
             
             Tab(role: .search) {

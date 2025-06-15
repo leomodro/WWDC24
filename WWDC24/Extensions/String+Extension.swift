@@ -11,4 +11,8 @@ extension String {
     var localized: String {
         NSLocalizedString(self, comment: "")
     }
+    
+    var excludeLocalization: String {
+        String(self)
+    }
 }
