@@ -42,6 +42,8 @@ struct WWDCsView: View {
                 switch item {
                 case .webView:
                     WebViewSampleView()
+                case .components:
+                    GeneralComponentsView()
                 default:
                     EmptyView()
                 }
@@ -60,7 +62,7 @@ struct WWDCsView: View {
         case .webView:
             path.append(WWDCItems.webView)
         case .components:
-            break
+            path.append(WWDCItems.components)
         }
     }
 }
