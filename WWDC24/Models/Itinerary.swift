@@ -25,6 +25,7 @@ struct Itinerary: Equatable {
 }
 
 @available(iOS 26.0, *)
+@Generable
 struct DayPlan: Equatable {
     @Guide(description: "An unique and exciting title for this day plan.")
     let title: String
@@ -35,12 +36,16 @@ struct DayPlan: Equatable {
     let activities: [Activity]
 }
 
+@available(iOS 26.0, *)
+@Generable
 struct Activity: Equatable {
     let type: ActivityType
     let title: String
     let description: String
 }
 
+@available(iOS 26.0, *)
+@Generable
 enum ActivityType: String, CaseIterable {
     case sightseeing
     case foodAndDining
