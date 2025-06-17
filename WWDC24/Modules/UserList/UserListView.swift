@@ -10,7 +10,7 @@ import SwiftUI
 struct UserListView: View {
     
     @State var searchTerm: String = ""
-    @Environment(UserListViewModel.self) private var viewModel: UserListViewModel
+    @Environment(\.userListViewModel) private var viewModel
     @Namespace var userDetail
     
     private var columns = [GridItem(.flexible()), GridItem(.flexible())]

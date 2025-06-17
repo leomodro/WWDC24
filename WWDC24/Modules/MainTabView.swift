@@ -15,7 +15,7 @@ struct MainTabView: View {
         TabView {
             Tab("Users", systemImage: "person.fill", role: .none) {
                 UserListView()
-                    .environment(viewModel)
+                    .environment(\.userListViewModel, viewModel)
             }
             
             Tab("WWDCs", systemImage: "applelogo", role: .none) {

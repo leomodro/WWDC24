@@ -14,12 +14,12 @@ struct WebViewSampleView: View {
     }
     
     var body: some View {
-        if #available(iOS 18.4, *) {
+        if #available(iOS 26.0, *) {
             WebView(url: url)
                 .webViewBackForwardNavigationGestures(.disabled)
                 .webViewLinkPreviews(.enabled)
         } else {
-            Text(.webViewNotAvailableOnIOS184)
+            Text(.webViewNotAvailableOnIOS26)
                 .font(.headline)
         }
     }
