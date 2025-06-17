@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Playgrounds
 
 struct UserResponse: @MainActor Codable, Sendable {
     let users: [User]
@@ -56,4 +57,14 @@ extension User {
         }
         return "-"
     }
+}
+
+#Playground {
+    let user = User(id: 1, firstName: "Leonardo", lastName: "Modro", age: 28, gender: .male, role: .admin)
+    
+    let initials = user.initials
+    print(initials)
+    
+    let fullName = user.fullName
+    print(fullName)
 }
