@@ -40,16 +40,21 @@ extension View {
     func hardScrollEdgeEffect() -> some View {
         if #available(iOS 26.0, *) {
             return self.scrollEdgeEffectStyle(.hard, for: .all)
-        } else {
-            return self
         }
+        return self
     }
     
     func minimizableTabView() -> some View {
         if #available(iOS 26.0, *) {
-            return self.tabBarMinimizeBehavior(.automatic)
-        } else {
-            return self
+            return self.tabBarMinimizeBehavior(.onScrollDown)
         }
+        return self
+    }
+    
+    func bottomAccessory<Content>(@ViewBuilder content: () -> Content) -> some View where Content : View {
+        if #available(iOS 26.0, *) {
+            return self.tabViewBottomAccessory(content: content)
+        }
+        return self
     }
 }

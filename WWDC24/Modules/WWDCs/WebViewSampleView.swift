@@ -19,7 +19,7 @@ struct WebViewSampleView: View {
                 .webViewBackForwardNavigationGestures(.disabled)
                 .webViewLinkPreviews(.enabled)
         } else {
-            Text("WebView not available on iOS < 18.4")
+            Text(.webViewNotAvailableOnIOS184)
                 .font(.headline)
         }
     }

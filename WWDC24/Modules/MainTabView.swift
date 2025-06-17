@@ -27,7 +27,6 @@ struct MainTabView: View {
             }
         }
         .minimizableTabView()
-        .tint(.red)
     }
 }
 
