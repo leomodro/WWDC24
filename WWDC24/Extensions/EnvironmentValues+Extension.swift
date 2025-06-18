@@ -12,9 +12,18 @@ extension EnvironmentValues {
         get { self[UserListViewModelKey.self] }
         set { self[UserListViewModelKey.self] = newValue }
     }
+    
+    var searchViewModel: SearchViewModel {
+        get { self[SearchViewModelKey.self] }
+        set { self[SearchViewModelKey.self] = newValue }
+    }
 }
 
 
 private struct UserListViewModelKey: EnvironmentKey {
     static let defaultValue: UserListViewModel = UserListViewModel(service: UserService())
+}
+
+private struct SearchViewModelKey: EnvironmentKey {
+    static let defaultValue: SearchViewModel = SearchViewModel()
 }

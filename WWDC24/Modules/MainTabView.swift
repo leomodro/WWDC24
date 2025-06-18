@@ -10,6 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     
     @State private var viewModel = UserListViewModel(service: UserService())
+    @State private var searchViewModel = SearchViewModel()
     
     var body: some View {
         TabView {
@@ -23,7 +24,8 @@ struct MainTabView: View {
             }
             
             Tab(role: .search) {
-                Text(.search)
+                SearchView()
+                    .environment(\.searchViewModel, searchViewModel)
             }
         }
         .minimizableTabView()
