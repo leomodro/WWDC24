@@ -26,6 +26,6 @@ struct UserListPreview: PreviewModifier {
     }
 
     func body(content: Content, context: UserListViewModel) -> some View {
-        content.environment(context)
+        content.environment(\.userListViewModel, context)
     }
  }
